@@ -1,4 +1,3 @@
-
 /* =========================================
    PEDIDOS - JAVASCRIPT
 ========================================= */
@@ -36,5 +35,21 @@ document.addEventListener("DOMContentLoaded", function () {
 
     atualizarStatus();
 
-});
 
+    /* =========================================
+       BOTÃO USUÁRIO
+    ========================================= */
+
+    const botaoUsuario = document.getElementById("botaoUsuario");
+
+    if (botaoUsuario) {
+
+        botaoUsuario.addEventListener("click", function () {
+
+            window.location.href = "../pages/login_cliente.html";
+
+        });
+
+    }
+
+});

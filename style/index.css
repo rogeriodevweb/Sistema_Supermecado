@@ -1,314 +1,222 @@
-/* ================================
-   RESET
-================================ */
-
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-
-/* ================================
-   CONFIGURAÇÕES GERAIS
-================================ */
-
 body {
-    background: #f4f6f8;
-    color: #222;
     font-family: Arial, sans-serif;
+    background-color: #f5f6f8;
+    color: #222;
 }
 
 
-/* ================================
-   CABEÇALHO
-================================ */
+/* CABEÇALHO */
 
-header {
-    background: #176b3a;
+.cabecalho {
+    width: 100%;
+    height: 70px;
+
+    background-color: #0d47a1;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 40px;
+}
+
+
+/* LOGO */
+
+.logo h1 {
     color: white;
-    padding: 20px 40px;
-}
-
-header h1 {
     font-size: 24px;
 }
 
-header p {
-    margin-top: 5px;
-    opacity: 0.9;
-}
 
+/* BOTÃO USUÁRIO */
 
-/* ================================
-   CONTEÚDO
-================================ */
+.botao-usuario {
+    border: none;
+    background-color: white;
 
-main {
-    max-width: 1000px;
-    margin: 30px auto;
-    padding: 0 20px;
-}
+    color: #0d47a1;
 
+    padding: 10px 16px;
 
-/* ================================
-   TÍTULO
-================================ */
+    border-radius: 8px;
 
-.titulo {
-    margin-bottom: 20px;
-}
-
-.titulo h2 {
-    font-size: 26px;
-}
-
-.titulo p {
-    color: #666;
-    margin-top: 5px;
-}
-
-
-/* ================================
-   CARD DO PEDIDO
-================================ */
-
-.pedido {
-    background: white;
-    border-radius: 12px;
-    padding: 20px;
-    margin-bottom: 18px;
-
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
-}
-
-
-/* ================================
-   TOPO DO PEDIDO
-================================ */
-
-.pedido-topo {
     display: flex;
-    justify-content: space-between;
     align-items: center;
 
-    margin-bottom: 15px;
+    gap: 8px;
+
+    font-size: 15px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.2s;
 }
 
-.pedido-topo h3 {
+.botao-usuario:hover {
+    background-color: #e8eef8;
+    transform: translateY(-1px);
+}
+
+.icone-usuario {
     font-size: 18px;
 }
 
 
-/* ================================
-   STATUS
-================================ */
+/* CONTEÚDO */
 
-.status {
-    padding: 7px 12px;
+.conteudo {
+    width: 90%;
+    max-width: 1000px;
 
-    border-radius: 20px;
-
-    font-size: 13px;
-    font-weight: bold;
+    margin: 40px auto;
 }
 
 
-/* Pedido em preparo */
+/* BOAS-VINDAS */
 
-.em-preparo {
-    background: #fff3cd;
-    color: #856404;
+.boas-vindas {
+    margin-bottom: 30px;
+}
+
+.boas-vindas h2 {
+    font-size: 28px;
+    margin-bottom: 8px;
+}
+
+.boas-vindas p {
+    color: #666;
 }
 
 
-/* Pedido a caminho */
+/* COMPRAS */
 
-.a-caminho {
-    background: #cfe2ff;
-    color: #084298;
+.compras {
+    background-color: white;
+
+    padding: 25px;
+
+    border-radius: 12px;
+
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
 }
 
-
-/* Pedido entregue */
-
-.entregue {
-    background: #d1e7dd;
-    color: #0f5132;
-}
-
-
-/* ================================
-   INFORMAÇÕES
-================================ */
-
-.informacoes {
-    display: grid;
-
-    grid-template-columns: repeat(3, 1fr);
-
-    gap: 15px;
-
+.titulo-compras {
     margin-bottom: 20px;
 }
 
-.info {
-    background: #f7f7f7;
+.titulo-compras h2 {
+    font-size: 22px;
+}
 
-    padding: 12px;
+
+/* LISTA DE COMPRAS */
+
+.lista-compras {
+    display: flex;
+    flex-direction: column;
+
+    gap: 15px;
+}
+
+
+/* COMPRA */
+
+.compra {
+    border: 1px solid #ddd;
 
     border-radius: 8px;
+
+    padding: 18px;
+
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    transition: 0.2s;
 }
 
-.info span {
-    display: block;
+.compra:hover {
+    border-color: #0d47a1;
+}
 
-    font-size: 12px;
 
+/* INFORMAÇÕES */
+
+.compra h3 {
+    margin-bottom: 6px;
+    font-size: 17px;
+}
+
+.compra p {
     color: #777;
-
-    margin-bottom: 5px;
+    font-size: 14px;
 }
 
-.info strong {
-    font-size: 15px;
-}
-
-
-/* ================================
-   BARRA DE PROGRESSO
-================================ */
-
-.progresso {
+.informacoes-compra {
     display: flex;
 
     align-items: center;
 
-    margin-top: 15px;
+    gap: 15px;
 }
 
-.etapa {
-    text-align: center;
-
-    flex: 1;
-
-    position: relative;
+.informacoes-compra strong {
+    font-size: 17px;
 }
 
 
-/* Bolinha */
+/* STATUS */
 
-.bolinha {
-    width: 18px;
-    height: 18px;
+.status {
+    background-color: #e8f5e9;
 
-    background: #ccc;
+    color: #2e7d32;
 
-    border-radius: 50%;
+    padding: 6px 10px;
 
-    margin: auto;
+    border-radius: 20px;
 
-    position: relative;
-
-    z-index: 2;
-}
-
-
-/* Bolinha ativa */
-
-.etapa.ativa .bolinha {
-    background: #176b3a;
-}
-
-
-/* Texto da etapa */
-
-.etapa p {
-    font-size: 12px;
-
-    margin-top: 7px;
-
-    color: #666;
-}
-
-.etapa.ativa p {
-    color: #176b3a;
+    font-size: 13px;
 
     font-weight: bold;
 }
 
 
-/* Linha */
+/* RESPONSIVO */
 
-.linha {
-    height: 3px;
+@media (max-width: 600px) {
 
-    background: #ccc;
-
-    flex: 1;
-
-    margin-top: -22px;
-}
-
-
-/* Linha ativa */
-
-.linha.ativa {
-    background: #176b3a;
-}
-
-
-/* ================================
-   BOTÃO
-================================ */
-
-.btn {
-    margin-top: 18px;
-
-    padding: 10px 18px;
-
-    border: none;
-
-    border-radius: 7px;
-
-    background: #176b3a;
-
-    color: white;
-
-    cursor: pointer;
-
-    font-weight: bold;
-}
-
-.btn:hover {
-    background: #12552e;
-}
-
-
-/* ================================
-   RESPONSIVIDADE
-================================ */
-
-@media (max-width: 700px) {
-
-    .informacoes {
-        grid-template-columns: 1fr;
+    .cabecalho {
+        padding: 0 20px;
     }
 
-    .pedido-topo {
-        flex-direction: column;
+    .logo h1 {
+        font-size: 19px;
+    }
 
+    .conteudo {
+        width: 92%;
+        margin-top: 25px;
+    }
+
+    .compra {
+        flex-direction: column;
         align-items: flex-start;
 
-        gap: 10px;
+        gap: 15px;
     }
 
-    .progresso {
-        overflow-x: auto;
-    }
-
-    .etapa {
-        min-width: 100px;
+    .informacoes-compra {
+        width: 100%;
+        justify-content: space-between;
     }
 }
-

@@ -3,242 +3,75 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Acompanhar Pedidos - Supermercado</title>
+    <title>Supermercado - Início</title>
 
     <link rel="stylesheet" href="../style/index.css">
 </head>
-
 <body>
 
-    <header>
-        <h1>🛒 Supermercado</h1>
-        <p>Acompanhamento de pedidos</p>
-    </header>
+    <header class="cabecalho">
 
-    <main>
+    <div class="logo">
+        <h1>SuperMercado</h1>
+    </div>
 
-        <section class="titulo">
-            <h2>📦 Acompanhar meus pedidos</h2>
-            <p>Veja o andamento dos seus pedidos e as entregas previstas.</p>
+    <button class="botao-usuario" id="botaoUsuario">
+        <span class="icone-usuario">👤</span>
+        <span>Usuário</span>
+    </button>
+
+</header>
+
+
+    <main class="conteudo">
+
+        <section class="boas-vindas">
+            <h2>Olá, cliente!</h2>
+            <p>Confira suas compras realizadas.</p>
         </section>
 
 
-        <!-- PEDIDO 1 -->
-        <div class="pedido">
+        <section class="compras">
 
-            <div class="pedido-topo">
-                <h3>Pedido #10245</h3>
-
-                <span class="status a-caminho">
-                    🚚 A caminho
-                </span>
+            <div class="titulo-compras">
+                <h2>Minhas compras</h2>
             </div>
 
-            <div class="informacoes">
+            <div id="listaCompras" class="lista-compras">
 
-                <div class="info">
-                    <span>Data do pedido</span>
-                    <strong>14/09/2026</strong>
+                <div class="compra">
+                    <div>
+                        <h3>Compra #001</h3>
+                        <p>15/09/2026</p>
+                    </div>
+
+                    <div class="informacoes-compra">
+                        <strong>R$ 125,90</strong>
+                        <span class="status">Concluída</span>
+                    </div>
                 </div>
 
-                <div class="info">
-                    <span>Previsão de entrega</span>
-                    <strong>Hoje, 18:30</strong>
-                </div>
 
-                <div class="info">
-                    <span>Total</span>
-                    <strong>R$ 87,90</strong>
-                </div>
+                <div class="compra">
+                    <div>
+                        <h3>Compra #002</h3>
+                        <p>10/09/2026</p>
+                    </div>
 
-            </div>
-
-
-            <!-- PROGRESSO -->
-            <div class="progresso">
-
-                <div class="etapa ativa">
-                    <div class="bolinha"></div>
-                    <p>Pedido recebido</p>
-                </div>
-
-                <div class="linha ativa"></div>
-
-                <div class="etapa ativa">
-                    <div class="bolinha"></div>
-                    <p>Separando</p>
-                </div>
-
-                <div class="linha ativa"></div>
-
-                <div class="etapa ativa">
-                    <div class="bolinha"></div>
-                    <p>A caminho</p>
-                </div>
-
-                <div class="linha"></div>
-
-                <div class="etapa">
-                    <div class="bolinha"></div>
-                    <p>Entregue</p>
+                    <div class="informacoes-compra">
+                        <strong>R$ 87,50</strong>
+                        <span class="status">Concluída</span>
+                    </div>
                 </div>
 
             </div>
 
-            <button class="btn" onclick="mostrarPedido('10245')">
-                Ver detalhes
-            </button>
-
-        </div>
-
-
-        <!-- PEDIDO 2 -->
-        <div class="pedido">
-
-            <div class="pedido-topo">
-                <h3>Pedido #10238</h3>
-
-                <span class="status em-preparo">
-                    ⏳ Em preparo
-                </span>
-            </div>
-
-            <div class="informacoes">
-
-                <div class="info">
-                    <span>Data do pedido</span>
-                    <strong>14/09/2026</strong>
-                </div>
-
-                <div class="info">
-                    <span>Previsão de entrega</span>
-                    <strong>Hoje, 20:00</strong>
-                </div>
-
-                <div class="info">
-                    <span>Total</span>
-                    <strong>R$ 124,50</strong>
-                </div>
-
-            </div>
-
-
-            <!-- PROGRESSO -->
-            <div class="progresso">
-
-                <div class="etapa ativa">
-                    <div class="bolinha"></div>
-                    <p>Pedido recebido</p>
-                </div>
-
-                <div class="linha ativa"></div>
-
-                <div class="etapa ativa">
-                    <div class="bolinha"></div>
-                    <p>Separando</p>
-                </div>
-
-                <div class="linha"></div>
-
-                <div class="etapa">
-                    <div class="bolinha"></div>
-                    <p>A caminho</p>
-                </div>
-
-                <div class="linha"></div>
-
-                <div class="etapa">
-                    <div class="bolinha"></div>
-                    <p>Entregue</p>
-                </div>
-
-            </div>
-
-            <button class="btn" onclick="mostrarPedido('10238')">
-                Ver detalhes
-            </button>
-
-        </div>
-
-
-        <!-- PEDIDO 3 -->
-        <div class="pedido">
-
-            <div class="pedido-topo">
-                <h3>Pedido #10210</h3>
-
-                <span class="status entregue">
-                    ✓ Entregue
-                </span>
-            </div>
-
-            <div class="informacoes">
-
-                <div class="info">
-                    <span>Data do pedido</span>
-                    <strong>13/09/2026</strong>
-                </div>
-
-                <div class="info">
-                    <span>Entrega realizada</span>
-                    <strong>13/09/2026 - 19:42</strong>
-                </div>
-
-                <div class="info">
-                    <span>Total</span>
-                    <strong>R$ 63,70</strong>
-                </div>
-
-            </div>
-
-
-            <!-- PROGRESSO -->
-            <div class="progresso">
-
-                <div class="etapa ativa">
-                    <div class="bolinha"></div>
-                    <p>Pedido recebido</p>
-                </div>
-
-                <div class="linha ativa"></div>
-
-                <div class="etapa ativa">
-                    <div class="bolinha"></div>
-                    <p>Separando</p>
-                </div>
-
-                <div class="linha ativa"></div>
-
-                <div class="etapa ativa">
-                    <div class="bolinha"></div>
-                    <p>A caminho</p>
-                </div>
-
-                <div class="linha ativa"></div>
-
-                <div class="etapa ativa">
-                    <div class="bolinha"></div>
-                    <p>Entregue</p>
-                </div>
-
-            </div>
-
-            <button class="btn" onclick="mostrarPedido('10210')">
-                Ver detalhes
-            </button>
-
-        </div>
+        </section>
 
     </main>
 
 
-    <script>
-        function mostrarPedido(numero) {
-            alert("Abrindo detalhes do pedido #" + numero);
-        }
-    </script>
+    <script src="../js/index.js"></script>
 
 </body>
 </html>
-
