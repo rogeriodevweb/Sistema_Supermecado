@@ -11,10 +11,12 @@ body {
 }
 
 
-/* CABEÇALHO */
+/* =========================================
+   CABEÇALHO
+========================================= */
 
 .cabecalho {
-    width: 100%;
+    width: calc(100% - 380px);
     height: 70px;
 
     background-color: #0d47a1;
@@ -23,7 +25,30 @@ body {
     align-items: center;
     justify-content: space-between;
 
-    padding: 0 40px;
+    padding: 0 60px;
+
+    margin-left: 380px;
+
+    position: relative;
+}
+
+
+.nome-supermercado {
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    transform: translate(-50%, -50%);
+
+    margin: 0;
+
+    color: white;
+
+    font-size: 24px;
+    font-weight: bold;
+
+    white-space: nowrap;
 }
 
 
@@ -39,8 +64,8 @@ body {
 
 .botao-usuario {
     border: none;
-    background-color: white;
 
+    background-color: white;
     color: #0d47a1;
 
     padding: 10px 16px;
@@ -70,17 +95,26 @@ body {
 }
 
 
-/* CONTEÚDO */
+/* =========================================
+   CONTEÚDO PRINCIPAL
+========================================= */
 
 .conteudo {
-    width: 90%;
+    width: calc(100% - 380px);
+
     max-width: 1000px;
 
     margin: 40px auto;
+
+    margin-left: 380px;
+
+    padding: 0 30px;
 }
 
 
-/* BOAS-VINDAS */
+/* =========================================
+   BOAS-VINDAS
+========================================= */
 
 .boas-vindas {
     margin-bottom: 30px;
@@ -96,7 +130,9 @@ body {
 }
 
 
-/* COMPRAS */
+/* =========================================
+   COMPRAS
+========================================= */
 
 .compras {
     background-color: white;
@@ -117,19 +153,26 @@ body {
 }
 
 
-/* LISTA DE COMPRAS */
+/* =========================================
+   LISTA DE COMPRAS
+========================================= */
 
 .lista-compras {
     display: flex;
+
     flex-direction: column;
 
     gap: 15px;
 }
 
 
-/* COMPRA */
+/* =========================================
+   COMPRA
+========================================= */
 
 .compra {
+    width: 100%;
+
     border: 1px solid #ddd;
 
     border-radius: 8px;
@@ -139,9 +182,18 @@ body {
     display: flex;
 
     justify-content: space-between;
+
     align-items: center;
 
     transition: 0.2s;
+
+    background-color: white;
+
+    cursor: pointer;
+
+    text-align: left;
+
+    font-family: inherit;
 }
 
 .compra:hover {
@@ -153,11 +205,13 @@ body {
 
 .compra h3 {
     margin-bottom: 6px;
+
     font-size: 17px;
 }
 
 .compra p {
     color: #777;
+
     font-size: 14px;
 }
 
@@ -174,7 +228,9 @@ body {
 }
 
 
-/* STATUS */
+/* =========================================
+   STATUS
+========================================= */
 
 .status {
     background-color: #e8f5e9;
@@ -191,25 +247,667 @@ body {
 }
 
 
-/* RESPONSIVO */
+/* =========================================
+   BARRA LATERAL
+========================================= */
 
-@media (max-width: 600px) {
+.barra-lateral {
+    position: fixed;
 
-    .cabecalho {
-        padding: 0 20px;
+    top: 0;
+    left: 0;
+
+    width: 380px;
+    max-width: 90%;
+
+    height: 100vh;
+
+    background-color: white;
+
+    z-index: 1000;
+
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.15);
+
+    overflow-y: auto;
+}
+
+
+/* =========================================
+   TOPO DA LATERAL
+========================================= */
+
+.topo-lateral {
+    height: 70px;
+
+    background-color: #0d47a1;
+
+    color: white;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding: 0 20px;
+}
+
+.topo-lateral h2 {
+    font-size: 19px;
+}
+
+
+/* =========================================
+   BOTÃO FECHAR
+========================================= */
+
+.fechar-menu {
+    border: none;
+
+    background: transparent;
+
+    color: white;
+
+    font-size: 22px;
+
+    cursor: pointer;
+
+    padding: 5px;
+}
+
+.fechar-menu:hover {
+    color: #dbe7ff;
+}
+
+
+/* =========================================
+   MENU DE NAVEGAÇÃO
+========================================= */
+
+.menu-navegacao {
+    display: flex;
+
+    flex-direction: column;
+
+    padding: 15px;
+
+    gap: 8px;
+
+    border-bottom: 1px solid #ddd;
+}
+
+
+/* ITENS DO MENU */
+
+.item-menu {
+    width: 100%;
+
+    padding: 13px 15px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    background-color: transparent;
+
+    color: #333;
+
+    font-size: 15px;
+
+    font-weight: bold;
+
+    text-align: left;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.item-menu:hover {
+    background-color: #e8eef8;
+
+    color: #0d47a1;
+}
+
+
+/* ITEM ATIVO */
+
+.item-menu.ativo {
+    background-color: #e3ecfb;
+
+    color: #0d47a1;
+}
+
+
+/* =========================================
+   CONTEÚDO DA LATERAL
+========================================= */
+
+.conteudo-lateral {
+    padding: 25px 20px;
+}
+
+
+/* =========================================
+   PAINÉIS DA LATERAL
+========================================= */
+
+.painel-inicio,
+.painel-perfil {
+    display: none;
+}
+
+.painel-inicio {
+    display: block;
+}
+
+
+/* TÍTULOS */
+
+.conteudo-lateral h2 {
+    font-size: 21px;
+
+    color: #0d47a1;
+
+    margin-bottom: 20px;
+}
+
+.conteudo-lateral p {
+    color: #666;
+
+    font-size: 14px;
+
+    line-height: 1.6;
+}
+
+
+/* =========================================
+   PERFIL DA LATERAL
+========================================= */
+
+#formPerfil {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 10px;
+}
+
+#formPerfil label {
+    font-size: 14px;
+
+    font-weight: bold;
+
+    color: #333;
+
+    margin-top: 8px;
+}
+
+#formPerfil input {
+    width: 100%;
+
+    padding: 12px;
+
+    border: 1px solid #ccc;
+
+    border-radius: 7px;
+
+    font-size: 14px;
+
+    outline: none;
+}
+
+#formPerfil input:focus {
+    border-color: #0d47a1;
+
+    box-shadow: 0 0 0 2px rgba(13, 71, 161, 0.1);
+}
+
+
+/* =========================================
+   BOTÃO SALVAR
+========================================= */
+
+.botao-salvar {
+    margin-top: 15px;
+
+    padding: 12px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    background-color: #0d47a1;
+
+    color: white;
+
+    font-size: 15px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.botao-salvar:hover {
+    background-color: #083575;
+}
+
+
+/* =========================================
+   TELAS CENTRAIS
+========================================= */
+
+.tela-central {
+    width: 100%;
+}
+
+
+/* =========================================
+   CABEÇALHO DAS TELAS
+========================================= */
+
+.cabecalho-tela {
+    width: 100%;
+
+    text-align: center;
+
+    margin-bottom: 30px;
+}
+
+
+/* =========================================
+   PERFIL CENTRAL
+========================================= */
+
+.tela-perfil {
+    width: 100%;
+
+    display: flex;
+
+    justify-content: center;
+}
+
+.card-perfil {
+    background-color: white;
+
+    width: 80%;
+
+    max-width: 700px;
+
+    padding: 30px;
+
+    border-radius: 12px;
+
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+}
+
+.card-perfil form {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 10px;
+}
+
+.card-perfil label {
+    font-size: 14px;
+
+    font-weight: bold;
+
+    margin-top: 8px;
+}
+
+.card-perfil input {
+    width: 100%;
+
+    padding: 13px;
+
+    border: 1px solid #ccc;
+
+    border-radius: 7px;
+
+    font-size: 14px;
+
+    outline: none;
+}
+
+.card-perfil input:focus {
+    border-color: #0d47a1;
+}
+
+
+/* BOTÃO SALVAR DO PERFIL */
+
+.card-perfil .botao-salvar {
+    margin-top: 15px;
+
+    padding: 13px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    background-color: #0d47a1;
+
+    color: white;
+
+    font-weight: bold;
+
+    font-size: 15px;
+
+    cursor: pointer;
+}
+
+.card-perfil .botao-salvar:hover {
+    background-color: #083575;
+}
+
+
+/* =========================================
+   ENDEREÇO CENTRAL
+========================================= */
+
+.tela-endereco {
+    width: 100%;
+
+    display: flex;
+
+    justify-content: center;
+}
+
+.card-endereco {
+    background-color: white;
+
+    width: 80%;
+
+    max-width: 700px;
+
+    padding: 30px;
+
+    border-radius: 12px;
+
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+}
+
+
+/* FORMULÁRIO DE ENDEREÇO */
+
+#formEndereco {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 10px;
+}
+
+
+#formEndereco label {
+    font-size: 14px;
+
+    font-weight: bold;
+
+    color: #333;
+
+    margin-top: 8px;
+}
+
+
+#formEndereco input {
+    width: 100%;
+
+    padding: 13px;
+
+    border: 1px solid #ccc;
+
+    border-radius: 7px;
+
+    font-size: 14px;
+
+    outline: none;
+}
+
+
+#formEndereco input:focus {
+    border-color: #0d47a1;
+
+    box-shadow: 0 0 0 2px rgba(13, 71, 161, 0.1);
+}
+
+
+.card-endereco .botao-salvar {
+    width: 100%;
+
+    margin-top: 15px;
+
+    padding: 13px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    background-color: #0d47a1;
+
+    color: white;
+
+    font-weight: bold;
+
+    font-size: 15px;
+
+    cursor: pointer;
+}
+
+.card-endereco .botao-salvar:hover {
+    background-color: #083575;
+}
+
+
+/* =========================================
+   PEDIDOS NO CENTRO
+========================================= */
+
+.lista-pedidos-central {
+    width: 80%;
+
+    max-width: 800px;
+
+    margin: 0 auto;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 15px;
+}
+
+.pedido-central {
+    width: 100%;
+
+    padding: 20px;
+
+    border: 1px solid #ddd;
+
+    border-radius: 10px;
+
+    background-color: white;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    cursor: pointer;
+
+    text-align: left;
+
+    transition: 0.2s;
+}
+
+.pedido-central:hover {
+    border-color: #0d47a1;
+
+    background-color: #f5f8fd;
+}
+
+.pedido-central h3 {
+    margin-bottom: 6px;
+}
+
+.pedido-central p {
+    color: #777;
+
+    font-size: 14px;
+}
+
+.pedido-central strong {
+    color: #0d47a1;
+
+    font-size: 17px;
+}
+
+
+/* =========================================
+   BOTÃO VOLTAR
+========================================= */
+
+.botao-voltar {
+    border: none;
+
+    background-color: #e8eef8;
+
+    color: #0d47a1;
+
+    padding: 10px 14px;
+
+    border-radius: 7px;
+
+    font-size: 13px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    margin-bottom: 20px;
+}
+
+.botao-voltar:hover {
+    background-color: #d6e3f8;
+}
+
+
+/* =========================================
+   DETALHES DO PEDIDO
+========================================= */
+
+#detalhesPedido {
+    border-top: 1px solid #ddd;
+
+    padding-top: 15px;
+}
+
+#detalhesPedido h3 {
+    color: #0d47a1;
+
+    font-size: 17px;
+
+    margin-bottom: 15px;
+}
+
+#detalhesPedido p {
+    margin-bottom: 10px;
+}
+
+#detalhesPedido .item-produto {
+    border-bottom: 1px solid #eee;
+
+    padding: 12px 0;
+}
+
+#detalhesPedido .total-pedido {
+    margin-top: 20px;
+
+    padding-top: 15px;
+
+    border-top: 2px solid #0d47a1;
+
+    font-size: 18px;
+
+    font-weight: bold;
+
+    color: #0d47a1;
+}
+
+
+/* =========================================
+   RESPONSIVO
+========================================= */
+
+@media (max-width: 800px) {
+
+    .barra-lateral {
+        width: 280px;
     }
 
-    .logo h1 {
-        font-size: 19px;
+    .cabecalho {
+        margin-left: 280px;
+
+        width: calc(100% - 280px);
+
+        padding: 0 25px;
     }
 
     .conteudo {
-        width: 92%;
+        width: calc(100% - 280px);
+
+        margin-left: 280px;
+
+        padding: 0 20px;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .barra-lateral {
+        width: 240px;
+    }
+
+    .cabecalho {
+        margin-left: 240px;
+
+        width: calc(100% - 240px);
+
+        padding: 0 15px;
+    }
+
+    .logo h1 {
+        font-size: 18px;
+    }
+
+    .botao-usuario {
+        padding: 8px 10px;
+    }
+
+    .botao-usuario span:last-child {
+        display: none;
+    }
+
+    .conteudo {
+        width: calc(100% - 240px);
+
+        margin-left: 240px;
+
+        padding: 0 15px;
+
         margin-top: 25px;
     }
 
     .compra {
         flex-direction: column;
+
         align-items: flex-start;
 
         gap: 15px;
@@ -217,6 +915,20 @@ body {
 
     .informacoes-compra {
         width: 100%;
+
         justify-content: space-between;
     }
+
+    .card-perfil {
+        width: 100%;
+    }
+
+    .card-endereco {
+        width: 100%;
+    }
+
+    .lista-pedidos-central {
+        width: 100%;
+    }
+
 }

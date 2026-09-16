@@ -1,68 +1,435 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Supermercado - Início</title>
 
     <link rel="stylesheet" href="../style/index.css">
 </head>
+
 <body>
+
+    <!-- CABEÇALHO -->
 
     <header class="cabecalho">
 
-    <div class="logo">
-        <h1>SuperMercado</h1>
-    </div>
+        <div class="logo">
+            <h1>SuperMercado</h1>
+        </div>
 
-    <button class="botao-usuario" id="botaoUsuario">
-        <span class="icone-usuario">👤</span>
-        <span>Usuário</span>
-    </button>
+        <button class="botao-usuario" id="botaoUsuario">
 
-</header>
+            <span class="icone-usuario">👤</span>
 
+            <span>Usuário</span>
+
+        </button>
+
+    </header>
+
+
+    <!-- BARRA LATERAL -->
+
+    <aside class="barra-lateral" id="barraLateral">
+
+        <div class="topo-lateral">
+
+            <h2>Menu do Cliente</h2>
+
+            <button id="fecharMenu" class="fechar-menu">×</button>
+
+        </div>
+
+
+        <!-- MENU -->
+
+        <nav class="menu-navegacao">
+
+            <button class="item-menu ativo" id="botaoInicio">
+                🛒 Minhas Compras
+            </button>
+
+            <button class="item-menu" id="botaoEndereco">
+                📍 Meu Endereço
+            </button>
+
+            <button class="item-menu" id="botaoPerfil">
+                👤 Meu Perfil
+            </button>
+
+        </nav>
+
+
+        <!-- CONTEÚDO DA BARRA LATERAL -->
+
+        <div class="conteudo-lateral" id="conteudoLateral">
+
+            <!-- PAINEL INÍCIO -->
+
+            <div class="painel-inicio">
+
+                <h2>Início</h2>
+
+                <p>
+                    Bem-vindo ao seu painel de cliente.
+                </p>
+
+                <p>
+                    Consulte seu perfil e suas compras.
+                </p>
+
+            </div>
+
+        </div>
+
+    </aside>
+
+
+    <!-- CONTEÚDO PRINCIPAL -->
 
     <main class="conteudo">
 
-        <section class="boas-vindas">
-            <h2>Olá, cliente!</h2>
-            <p>Confira suas compras realizadas.</p>
+
+        <!-- TELA INÍCIO -->
+
+        <section
+            class="tela-central"
+            id="telaInicio"
+        >
+
+            <div class="boas-vindas">
+
+                <h2>
+                    Olá, cliente!
+                </h2>
+
+                <p>
+                    Confira suas compras realizadas.
+                </p>
+
+            </div>
+
+
+            <!-- COMPRAS -->
+
+            <section class="compras">
+
+                <div class="titulo-compras">
+
+                    <h2>
+                        Minhas compras
+                    </h2>
+
+                </div>
+
+
+                <div
+                    id="listaCompras"
+                    class="lista-compras"
+                >
+
+
+                    <!-- COMPRA 001 -->
+
+                    <button
+                        class="compra"
+                        data-pedido="001"
+                    >
+
+                        <div>
+
+                            <h3>
+                                Compra #001
+                            </h3>
+
+                            <p>
+                                15/09/2026
+                            </p>
+
+                        </div>
+
+
+                        <div class="informacoes-compra">
+
+                            <strong>
+                                R$ 125,90
+                            </strong>
+
+                            <span class="status">
+                                Concluída
+                            </span>
+
+                        </div>
+
+                    </button>
+
+
+                    <!-- COMPRA 002 -->
+
+                    <button
+                        class="compra"
+                        data-pedido="002"
+                    >
+
+                        <div>
+
+                            <h3>
+                                Compra #002
+                            </h3>
+
+                            <p>
+                                10/09/2026
+                            </p>
+
+                        </div>
+
+
+                        <div class="informacoes-compra">
+
+                            <strong>
+                                R$ 87,50
+                            </strong>
+
+                            <span class="status">
+                                Concluída
+                            </span>
+
+                        </div>
+
+                    </button>
+
+                </div>
+
+            </section>
+
         </section>
 
 
-        <section class="compras">
+        <!-- TELA PERFIL -->
 
-            <div class="titulo-compras">
-                <h2>Minhas compras</h2>
+        <section
+            class="tela-central tela-perfil"
+            id="telaPerfil"
+        >
+
+            <div class="cabecalho-tela">
+
+                <h2>
+                    Meu Perfil
+                </h2>
+
+                <p>
+                    Visualize e altere suas informações pessoais.
+                </p>
+
             </div>
 
-            <div id="listaCompras" class="lista-compras">
 
-                <div class="compra">
-                    <div>
-                        <h3>Compra #001</h3>
-                        <p>15/09/2026</p>
-                    </div>
+            <div class="card-perfil">
 
-                    <div class="informacoes-compra">
-                        <strong>R$ 125,90</strong>
-                        <span class="status">Concluída</span>
-                    </div>
-                </div>
+                <form id="formPerfilCentral">
+
+                    <label for="nomeClienteCentral">
+                        Nome
+                    </label>
+
+                    <input
+                        type="text"
+                        id="nomeClienteCentral"
+                        placeholder="Digite seu nome"
+                    >
 
 
-                <div class="compra">
-                    <div>
-                        <h3>Compra #002</h3>
-                        <p>10/09/2026</p>
-                    </div>
+                    <label for="emailClienteCentral">
+                        E-mail
+                    </label>
 
-                    <div class="informacoes-compra">
-                        <strong>R$ 87,50</strong>
-                        <span class="status">Concluída</span>
-                    </div>
-                </div>
+                    <input
+                        type="email"
+                        id="emailClienteCentral"
+                        placeholder="Digite seu e-mail"
+                    >
+
+
+                    <label for="telefoneClienteCentral">
+                        Telefone
+                    </label>
+
+                    <input
+                        type="text"
+                        id="telefoneClienteCentral"
+                        placeholder="Digite seu telefone"
+                    >
+
+
+                    <label for="senhaClienteCentral">
+                        Senha
+                    </label>
+
+                    <input
+                        type="password"
+                        id="senhaClienteCentral"
+                        placeholder="Digite sua senha"
+                    >
+
+
+                    <button
+                        type="submit"
+                        class="botao-salvar"
+                    >
+                        Salvar
+                    </button>
+
+                </form>
+
+            </div>
+
+        </section>
+
+
+        <!-- TELA ENDEREÇO -->
+
+        <section
+            class="tela-central tela-endereco"
+            id="telaEndereco"
+        >
+
+            <div class="cabecalho-tela">
+
+                <h2>
+                    Meu Endereço
+                </h2>
+
+                <p>
+                    Visualize e altere seu endereço cadastrado.
+                </p>
+
+            </div>
+
+
+            <div class="card-endereco">
+
+                <form id="formEndereco">
+
+                    <label for="cepCliente">
+                        CEP
+                    </label>
+
+                    <input
+                        type="text"
+                        id="cepCliente"
+                        placeholder="Digite seu CEP"
+                    >
+
+
+                    <label for="ruaCliente">
+                        Rua
+                    </label>
+
+                    <input
+                        type="text"
+                        id="ruaCliente"
+                        placeholder="Digite sua rua"
+                    >
+
+
+                    <label for="numeroCliente">
+                        Número
+                    </label>
+
+                    <input
+                        type="text"
+                        id="numeroCliente"
+                        placeholder="Digite o número"
+                    >
+
+
+                    <label for="complementoCliente">
+                        Complemento
+                    </label>
+
+                    <input
+                        type="text"
+                        id="complementoCliente"
+                        placeholder="Apartamento, casa, bloco..."
+                    >
+
+
+                    <label for="bairroCliente">
+                        Bairro
+                    </label>
+
+                    <input
+                        type="text"
+                        id="bairroCliente"
+                        placeholder="Digite seu bairro"
+                    >
+
+
+                    <label for="cidadeCliente">
+                        Cidade
+                    </label>
+
+                    <input
+                        type="text"
+                        id="cidadeCliente"
+                        placeholder="Digite sua cidade"
+                    >
+
+
+                    <label for="estadoCliente">
+                        Estado
+                    </label>
+
+                    <input
+                        type="text"
+                        id="estadoCliente"
+                        placeholder="Digite seu estado"
+                    >
+
+
+                    <button
+                        type="submit"
+                        class="botao-salvar"
+                    >
+                        Salvar endereço
+                    </button>
+
+                </form>
+
+            </div>
+
+        </section>
+
+
+        <!-- TELA DETALHES DO PEDIDO -->
+
+        <section
+            class="tela-central"
+            id="telaDetalhes"
+        >
+
+            <button
+                class="botao-voltar"
+                id="voltartelaInicio"
+            >
+                ← Voltar para Minhas Compras
+            </button>
+
+
+            <div class="cabecalho-tela">
+
+                <h2>
+                    Detalhes do pedido
+                </h2>
+
+            </div>
+
+
+            <div id="detalhesPedido">
 
             </div>
 
@@ -71,7 +438,10 @@
     </main>
 
 
+    <!-- JAVASCRIPT -->
+
     <script src="../js/index.js"></script>
 
 </body>
+
 </html>
