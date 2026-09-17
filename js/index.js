@@ -43,10 +43,6 @@ const telaEndereco =
 
 function mostrarTela(tela) {
 
-    /* =====================================
-       ESCONDER TODAS AS TELAS
-    ===================================== */
-
     if (telaInicio) {
         telaInicio.style.display = "none";
     }
@@ -148,19 +144,6 @@ function mostrarTela(tela) {
 
 
 /* =========================================
-   BARRA LATERAL
-========================================= */
-
-/*
-   A barra lateral serve somente para
-   navegação.
-
-   Perfil e Endereço aparecem na
-   parte central da página.
-*/
-
-
-/* =========================================
    BOTÃO FECHAR MENU
 ========================================= */
 
@@ -223,11 +206,6 @@ if (botaoEndereco) {
 
     botaoEndereco.addEventListener("click", () => {
 
-        /*
-           Mostra SOMENTE o formulário
-           de endereço no centro.
-        */
-
         mostrarTela("endereco");
 
     });
@@ -242,11 +220,6 @@ if (botaoEndereco) {
 if (botaoPerfil) {
 
     botaoPerfil.addEventListener("click", () => {
-
-        /*
-           Mostra SOMENTE o formulário
-           de perfil no centro.
-        */
 
         mostrarTela("perfil");
 
@@ -423,11 +396,54 @@ function abrirDetalhes(numeroPedido) {
                 ${pedido.endereco}
             </p>
 
+
+            <!-- =================================
+                 ACOMPANHAR ENTREGA
+            ================================= -->
+
+            <div class="area-acompanhar-entrega">
+
+                <div class="card-acompanhar-entrega">
+
+                    <div class="icone-entrega">
+                        🚚
+                    </div>
+
+                    <div class="informacoes-entrega">
+
+                        <h3>
+                            Acompanhar entrega
+                        </h3>
+
+                        <p>
+                            Seu pedido está a caminho.
+                        </p>
+
+                    </div>
+
+                    <button
+                        type="button"
+                        class="botao-visualizar-entrega"
+                        onclick="window.location.href='pages/acompanhar_entrega.html'"
+                    >
+                        Visualizar entrega
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- =================================
+                 PRODUTOS
+            ================================= -->
+
             <h3>
                 Produtos comprados
             </h3>
 
             ${produtosHTML}
+
 
             <div class="total-pedido">
 
@@ -549,10 +565,6 @@ if (formPerfilCentral) {
                     .trim();
 
 
-            /* =================================
-               CAMPOS OBRIGATÓRIOS
-            ================================= */
-
             if (!nome || !email || !telefone) {
 
                 alert(
@@ -563,10 +575,6 @@ if (formPerfilCentral) {
 
             }
 
-
-            /* =================================
-               DADOS DO PERFIL
-            ================================= */
 
             console.log(
                 "Dados do perfil:",
@@ -651,10 +659,6 @@ if (formEndereco) {
                     .trim();
 
 
-            /* =================================
-               CAMPOS OBRIGATÓRIOS
-            ================================= */
-
             if (
                 !cep ||
                 !rua ||
@@ -672,10 +676,6 @@ if (formEndereco) {
 
             }
 
-
-            /* =================================
-               DADOS DO ENDEREÇO
-            ================================= */
 
             const endereco = {
 
@@ -711,4 +711,3 @@ if (formEndereco) {
 ========================================= */
 
 mostrarTela("inicio");
-

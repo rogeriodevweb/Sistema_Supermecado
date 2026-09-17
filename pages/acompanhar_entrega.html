@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Acompanhar Entrega - CA Tech</title>
+
+    <link rel="stylesheet" href="../style/acompanhar_entrega.css">
+</head>
+
+<body>
+
+    <!-- =========================
+         CABEÇALHO
+    ========================== -->
+    <header class="cabecalho">
+
+        <div class="logo-area">
+           
+        </div>
+
+        <div class="titulo-area">
+            <h1>Acompanhar entrega</h1>
+            <p>Acompanhe o status do seu pedido em tempo real</p>
+        </div>
+
+    </header>
+
+
+    <!-- =========================
+         CONTEÚDO PRINCIPAL
+    ========================== -->
+    <main class="container">
+
+        <!-- BOTÃO VOLTAR -->
+        <button class="btn-voltar" onclick="voltarPagina()">
+            ← Voltar
+        </button>
+
+
+        <!-- =========================
+             BUSCA DO PEDIDO
+        ========================== -->
+        <section class="card busca-pedido">
+
+            <div class="icone-pedido">
+                📦
+            </div>
+
+            <div class="busca-conteudo">
+
+                <h2>Consultar pedido</h2>
+
+                <p>
+                    Digite o código do pedido para acompanhar sua entrega.
+                </p>
+
+                <div class="campo-busca">
+
+                    <input
+                        type="text"
+                        id="codigoPedido"
+                        placeholder="Ex: CAT-2026-001"
+                        autocomplete="off"
+                    >
+
+                    <button onclick="consultarPedido()">
+                        Acompanhar
+                    </button>
+
+                </div>
+
+                <span id="mensagemBusca"></span>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             INFORMAÇÕES DO PEDIDO
+        ========================== -->
+        <section id="areaPedido" class="pedido-area">
+
+            <!-- CABEÇALHO DO PEDIDO -->
+            <div class="card resumo-pedido">
+
+                <div>
+                    <span class="label">Pedido</span>
+                    <h2 id="numeroPedido">CAT-2026-001</h2>
+                </div>
+
+                <div class="status-atual">
+
+                    <span class="label">Status atual</span>
+
+                    <span
+                        id="statusPedido"
+                        class="status entregue">
+                        Em transporte
+                    </span>
+
+                </div>
+
+                <div>
+                    <span class="label">Previsão de entrega</span>
+                    <strong id="previsaoEntrega">
+                        22/09/2026
+                    </strong>
+                </div>
+
+            </div>
+
+
+            <!-- =========================
+                 GRID PRINCIPAL
+            ========================== -->
+            <div class="grid-entrega">
+
+
+                <!-- =========================
+                     LINHA DO TEMPO
+                ========================== -->
+                <div class="card timeline-card">
+
+                    <div class="card-titulo">
+                        <h2>Acompanhamento</h2>
+
+                        <span id="ultimaAtualizacao">
+                            Atualizado hoje
+                        </span>
+                    </div>
+
+
+                    <div class="timeline">
+
+
+                        <!-- PEDIDO REALIZADO -->
+                        <div class="timeline-item concluido">
+
+                            <div class="timeline-icon">
+                                ✓
+                            </div>
+
+                            <div class="timeline-info">
+
+                                <h3>Pedido realizado</h3>
+
+                                <p>
+                                    Seu pedido foi recebido pela CA Tech.
+                                </p>
+
+                                <span>
+                                    17/09/2026 • 08:42
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- PAGAMENTO -->
+                        <div class="timeline-item concluido">
+
+                            <div class="timeline-icon">
+                                ✓
+                            </div>
+
+                            <div class="timeline-info">
+
+                                <h3>Pagamento confirmado</h3>
+
+                                <p>
+                                    O pagamento do pedido foi confirmado.
+                                </p>
+
+                                <span>
+                                    17/09/2026 • 08:45
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- PREPARAÇÃO -->
+                        <div class="timeline-item concluido">
+
+                            <div class="timeline-icon">
+                                ✓
+                            </div>
+
+                            <div class="timeline-info">
+
+                                <h3>Pedido preparado</h3>
+
+                                <p>
+                                    O pedido foi separado e embalado.
+                                </p>
+
+                                <span>
+                                    17/09/2026 • 09:30
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- TRANSPORTE -->
+                        <div class="timeline-item ativo">
+
+                            <div class="timeline-icon">
+                                🚚
+                            </div>
+
+                            <div class="timeline-info">
+
+                                <h3>Em transporte</h3>
+
+                                <p>
+                                    Seu pedido está a caminho do endereço de entrega.
+                                </p>
+
+                                <span>
+                                    17/09/2026 • 10:15
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- ENTREGA -->
+                        <div class="timeline-item">
+
+                            <div class="timeline-icon">
+                                📍
+                            </div>
+
+                            <div class="timeline-info">
+
+                                <h3>Pedido entregue</h3>
+
+                                <p>
+                                    Aguardando conclusão da entrega.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- =========================
+                     LATERAL
+                ========================== -->
+                <div class="coluna-lateral">
+
+
+                    <!-- TRANSPORTADORA -->
+                    <div class="card transporte-card">
+
+                        <div class="card-titulo">
+                            <h2>Transporte</h2>
+                        </div>
+
+                        <div class="transporte-info">
+
+                            <div class="info-linha">
+                                <span>Transportadora</span>
+                                <strong id="transportadora">
+                                    CA Tech Express
+                                </strong>
+                            </div>
+
+                            <div class="info-linha">
+                                <span>Código de rastreio</span>
+                                <strong id="codigoRastreio">
+                                    CATX938472BR
+                                </strong>
+                            </div>
+
+                            <div class="info-linha">
+                                <span>Tipo de envio</span>
+                                <strong id="tipoEnvio">
+                                    Entrega padrão
+                                </strong>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- ENDEREÇO -->
+                    <div class="card endereco-card">
+
+                        <div class="card-titulo">
+                            <h2>Endereço de entrega</h2>
+                        </div>
+
+                        <div class="endereco">
+
+                            <strong id="nomeDestinatario">
+                                Rogério Silva
+                            </strong>
+
+                            <p id="enderecoRua">
+                                Rua Exemplo, 123
+                            </p>
+
+                            <p id="enderecoBairro">
+                                Centro
+                            </p>
+
+                            <p id="enderecoCidade">
+                                Araguaína - TO
+                            </p>
+
+                            <p id="enderecoCep">
+                                CEP: 77800-000
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- PRODUTO -->
+                    <div class="card produto-card">
+
+                        <div class="card-titulo">
+                            <h2>Pedido</h2>
+                        </div>
+
+                        <div class="produto">
+
+                            <div class="produto-imagem">
+                                📦
+                            </div>
+
+                            <div>
+
+                                <strong id="nomeProduto">
+                                    Cabo de Rede CAT6
+                                </strong>
+
+                                <p id="quantidadeProduto">
+                                    Quantidade: 1
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================
+         RODAPÉ
+    ========================== -->
+    <footer class="rodape">
+
+        <p>
+            © 2026 CA Tech Solutions — Tecnologia que conecta. Soluções que transformam.
+        </p>
+
+    </footer>
+
+
+    <script src="../js/acompanhar_entrega.js"></script>
+
+</body>
+
+</html>
